@@ -1,4 +1,4 @@
-var nolu = require("../lib/index");
+var nolu = require("../lib/nolu");
 
 describe("nolu", function () {
   describe("-e", function () {
