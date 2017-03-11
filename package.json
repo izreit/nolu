@@ -1,7 +1,7 @@
 {
   "name": "nolu",
   "version": "0.0.1",
-  "description": "Node.js one-liner utility",
+  "description": "Ruby compatible Node.js one-liner utility",
   "main": "index.js",
   "scripts": {
     "test": "jasmine"
@@ -19,6 +19,7 @@
     "minimist": "^1.2.0"
   },
   "devDependencies": {
-    "jasmine": "^2.5.3"
+    "jasmine": "^2.5.3",
+    "mock-fs": "^4.1.0"
   }
 }
