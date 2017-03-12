@@ -49,7 +49,7 @@ describe("nolu", function () {
   });
 
   describe("-p", function () {
-    it("executes specified code", function (done) {
+    it("loops specified code for each line", function (done) {
       var is = fs.createReadStream("./test.txt");
       var ofd = fs.openSync("./outtest2.txt", "wx");
       Promise.resolve()

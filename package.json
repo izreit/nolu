@@ -4,7 +4,7 @@
   "description": "Ruby compatible Node.js one-liner utility",
   "main": "index.js",
   "scripts": {
-    "test": "jasmine"
+    "test": "istanbul cover node_modules/jasmine/bin/jasmine.js"
   },
   "keywords": [
     "text",
@@ -19,6 +19,7 @@
     "minimist": "^1.2.0"
   },
   "devDependencies": {
+    "istanbul": "^0.4.5",
     "jasmine": "^2.5.3",
     "mock-fs": "^4.1.0"
   }
