@@ -55,12 +55,12 @@ describe("nolu", function () {
     });
   });
 
-  describe("-i", function () {
+  describe("-t", function () {
     it("assign a whole input into $_", function (done) {
       var is = fs.createReadStream("./test.txt");
       var ofd = fs.openSync("./outtest2.txt", "wx");
       Promise.resolve()
-        .then(() => pnolu(["-ipe", "$_ = $_.split('\\n').map(l => l[0]).join('')"], is, ofd))
+        .then(() => pnolu(["-tpe", "$_ = $_.split('\\n').map(l => l[0]).join('')"], is, ofd))
         .then(() => {
           expect(fs.readFileSync("./outtest2.txt").toString()).toBe("fbz");
           done();
@@ -72,7 +72,7 @@ describe("nolu", function () {
       var is = fs.createReadStream("./test.txt");
       var ofd = fs.openSync("./outtest2.txt", "wx");
       Promise.resolve()
-        .then(() => pnolu(["-ifpe", "input => input.split('\\n').map(l => l[0]).join('')"], is, ofd))
+        .then(() => pnolu(["-tfpe", "input => input.split('\\n').map(l => l[0]).join('')"], is, ofd))
         .then(() => {
           expect(fs.readFileSync("./outtest2.txt").toString()).toBe("fbz");
           done();
@@ -84,7 +84,7 @@ describe("nolu", function () {
       var is = fs.createReadStream("./test.txt");
       var ofd = fs.openSync("./outtest2.txt", "wx");
       Promise.resolve()
-        .then(() => pnolu(["-iJfpe", "i => i.split('\\n')"], is, ofd))
+        .then(() => pnolu(["-tJfpe", "input => input.split('\\n')"], is, ofd))
         .then(() => {
           expect(fs.readFileSync("./outtest2.txt").toString()).toBe([
             '[',
