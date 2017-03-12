@@ -1,6 +1,6 @@
 var mockfs = require("mock-fs");
 var fs = require("fs");
-var nolu = require("../lib/nolu");
+var nolu = require("../index");
 
 // Promisified version of nolu() for tests.
 function pnolu() {
@@ -27,7 +27,7 @@ describe("nolu", function () {
   });
 
   describe("-e", function () {
-    it("executes specified code", function (done) {
+    it("executes the specified code", function (done) {
       Promise.resolve()
         .then(() => pnolu(["-e", "fs.writeFileSync('./outtest.txt', 'foo')"], null, null))
         .then(() => {
@@ -42,6 +42,24 @@ describe("nolu", function () {
         .then(() => pnolu(["-e", "x = 99", "-e", "++x", "-e", "fs.writeFileSync('./outtest.txt', 'foo' + x)"], null, null))
         .then(() => {
           expect(fs.readFileSync("./outtest.txt").toString()).toBe("foo100");
+          done();
+        })
+        .catch(done.fail);
+    });
+  });
+
+  describe("-p", function () {
+    it("executes specified code", function (done) {
+      var is = fs.createReadStream("./test.txt");
+      var ofd = fs.openSync("./outtest2.txt", "wx");
+      Promise.resolve()
+        .then(() => pnolu(["-pe", "$_ = $_.toUpperCase()"], is, ofd))
+        .then(() => {
+          expect(fs.readFileSync("./outtest2.txt").toString()).toBe([
+            "FOO 100",
+            "BAR 200",
+            "ZOO 42"
+          ].join("\n"));
           done();
         })
         .catch(done.fail);
