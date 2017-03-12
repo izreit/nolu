@@ -3,6 +3,7 @@
   "version": "0.0.1",
   "description": "Ruby compatible Node.js one-liner utility",
   "main": "index.js",
+  "bin": "bin/nolu",
   "scripts": {
     "test": "istanbul cover node_modules/jasmine/bin/jasmine.js"
   },

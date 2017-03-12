@@ -1,3 +1,3 @@
-var nolu = require("./index");
-
+#!/usr/bin/env node
+var nolu = require("../index");
 nolu(process.argv.slice(2), process.stdin, process.stdout.fd);
