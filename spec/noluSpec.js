@@ -91,7 +91,8 @@ describe("nolu", function () {
             '  "foo 100",',
             '  "bar 200",',
             '  "zoo 42"',
-            ']'
+            ']',
+            ''
           ].join("\n"))
           done();
         })
@@ -123,7 +124,8 @@ describe("nolu", function () {
             '  "aa",',
             '  "bbb",',
             '  "cc"',
-            ']'
+            ']',
+            ''
           ].join("\n"))
           done();
         })
