@@ -1,12 +1,20 @@
 {
   "name": "nolu",
   "version": "0.0.1",
-  "description": "Ruby compatible Node.js one-liner utility",
+  "description": "Node.js one-liner utility. Provides Ruby compatible options such as -n, -p, -a and more to extend Node.js's -e"
   "main": "index.js",
   "bin": "bin/nolu",
   "scripts": {
     "test": "istanbul cover node_modules/jasmine/bin/jasmine.js"
   },
+  "files": [
+    "LICENSE",
+    "README.md",
+    "bin",
+    "index.js",
+    "lib",
+    "package.json"
+  ],
   "keywords": [
     "text",
     "shell",
@@ -14,7 +22,7 @@
     "one-liner",
     "oneliner"
   ],
-  "author": "Kaname KIZU",
+  "author": "izreit",
   "license": "MIT",
   "dependencies": {
     "minimist": "^1.2.0"
