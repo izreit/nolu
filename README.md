@@ -3,7 +3,7 @@
 
 [![Build Status](https://travis-ci.org/kizz/nolu.svg?branch=master)](https://travis-ci.org/kizz/nolu)
 
-`nolu` is a small command-line tool to write one-liners in Node.js.
+`nolu` is a small command-line tool to write one-liners in JavaScript ([Node.js](https://nodejs.org/)).
 
 ```
 $ cat test.txt
@@ -19,7 +19,7 @@ Nolu extends this `-e` with Ruby compatible options such as `-n` (process each l
 
 ## Install
 
-Install `nolu` globally with:
+You need to have Node.js. Install `nolu` globally with:
 
 ```
 npm i -g nolu
