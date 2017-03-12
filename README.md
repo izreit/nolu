@@ -1,4 +1,7 @@
+
 # nolu
+
+[![Build Status](https://travis-ci.org/kizz/nolu.svg?branch=master)](https://travis-ci.org/kizz/nolu)
 
 `nolu` is a small command-line tool to write one-liners in Node.js.
 
@@ -32,20 +35,21 @@ $ nolu [options]
 
 The following options are available:
 
-|:Option:|:Description:|
-|`-a`|Turns on auto-split mode when used with `-n` or `-p`. In auto-split mode, `$F = $\_.split(/\s/)` at beginning of each loop.|
+|Option|Description|
+|:----:|:------------|
+|`-a`|Turns on auto-split mode when used with `-n` or `-p`. In auto-split mode, `$F = $_.split(/\s/)` at beginning of each loop.|
 |`-B <code>`, `--BEGIN <code>`|Execute `code` before any `-e`s.|
 |`-e <code>`|Execute `code`. Multiple `-e`'s are executed in given order.|
 |`-E <code>`, `--END <code>`|Execute `code` after all `-e`'s.|
-|`-f`|Assume your `code` for `-e` is a function and call it with `$\_`. When using with `-p`, print the return value instead of `$\_`.|
+|`-f`|Assume your `code` for `-e` is a function and call it with `$_`. When using with `-p`, print the return value instead of `$_`.|
 |`-F <pattern>`|Use `pattern` as regexp for split() in auto-split mode (`-a`).|
 |`-h`, `--help`|Output the help.|
-|`-j`|Read `process.stdin` as JSON and set it to `$\_` before execute `-e`.|
+|`-j`|Read `process.stdin` as JSON and set it to `$_` before execute `-e`.|
 |`-J`|Apply JSON.stringify() for printing (`-p`).|
 |`-l`|Enables automatic line-ending processing, which means to chops every `"\n"` at the end of line. Works with `-n` or `-p`.|
-|`-n`|Read `process.stdin` and store it `$\_` and execute `-e` for each line.|
-|`-p`|Same with `-n` but print `$\_` (or the returned value when `-f`) after each loop.|
-|`-t`|Read `process.stdin` and set it to `$\_` before execute `-e` (after `--BEGIN`).|
+|`-n`|Read `process.stdin` and store it `$_` and execute `-e` for each line.|
+|`-p`|Same with `-n` but print `$_` (or the returned value when `-f`) after each loop.|
+|`-t`|Read `process.stdin` and set it to `$_` before execute `-e` (after `--BEGIN`).|
 |`-v`, `--version`|Output the version.|
 
 ## Examples
@@ -83,12 +87,12 @@ $ cat test.json | nolu -jJpe '$_ = Object.keys($_).map(k => $_[k])'
 ]
 ```
 
-When `-j` option is specified, nolu reads stdin as JSON (and store it to `$\_`).
-`-J` modifies `-p` to print `JSON.stringify($\_, null, 2)`.
+When `-j` option is specified, nolu reads stdin as JSON (and store it to `$_`).
+`-J` modifies `-p` to print `JSON.stringify($_, null, 2)`.
 
 #### More functional way
 
-Instead of refering/assigning `$\_`, you can use a function by `-f` options.
+Instead of refering/assigning `$_`, you can use a function by `-f` options.
 
 ```
 $ cat test.txt
@@ -105,7 +109,7 @@ The return value of the funciton is used to print (`-p`).
 
 #### Simple pipe
 
-The `-t` option simply read the whole content of `process.stdin` and give it to `$\_`.
+The `-t` option simply read the whole content of `process.stdin` and give it to `$_`.
 
 ```
 $ cat test.txt
