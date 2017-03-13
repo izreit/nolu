@@ -41,7 +41,7 @@ The following options are available:
 |`-B <code>`, `--BEGIN <code>`|Execute `code` before any `-e`s.|
 |`-e <code>`|Execute `code`. Multiple `-e`'s are executed in given order.|
 |`-E <code>`, `--END <code>`|Execute `code` after all `-e`'s.|
-|`-f`|Assume your `code` for `-e` is a function and call it with `$_`. When using with `-p`, print the return value instead of `$_`.|
+|`-f`|Assume your `code` for `-e` is a function and call it with `$_` and `$F`. When using with `-p`, print the return value instead of `$_`.|
 |`-F <pattern>`|Use `pattern` (regexp) for split() in auto-split mode (`-a`).|
 |`-h`, `--help`|Output the help.|
 |`-j`|Read `process.stdin` as JSON and set it to `$_` before execute `-e`.|
