@@ -273,5 +273,22 @@ describe("nolu", function () {
         })
         .catch(done.fail);
     });
+
+    it("with -fF passes two arguments", function (done) {
+      var is = fs.createReadStream("./test2.txt");
+      var opts = [
+        "-anfF", "[:/]",
+        "--BEGIN", "x=0",
+        "-e", "(l, f) => { x += Number(f[1]) * Number(f[2]); }",
+        "--END", "fs.writeFileSync('./outtest3.txt', 'result ' + x)"
+      ];
+      Promise.resolve()
+        .then(() => pnolu(opts, is, null))
+        .then(() => {
+          expect(fs.readFileSync("./outtest3.txt").toString()).toBe("result 4210");
+          done();
+        })
+        .catch(done.fail);
+    });
   });
 });
