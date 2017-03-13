@@ -1,6 +1,6 @@
 {
   "name": "nolu",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Node.js one-liner utility. Provides Ruby compatible options such as -n, -p, -a and more to extend Node.js's simple one-liner option -e",
   "main": "index.js",
   "bin": "bin/nolu",
