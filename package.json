@@ -22,9 +22,9 @@
     "one-liner",
     "oneliner"
   ],
-  "repository" : {
-    "type" : "git",
-    "url" : "https://github.com/izreit/nolu.git"
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/izreit/nolu.git"
   },
   "author": "izreit",
   "license": "MIT",
