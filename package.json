@@ -22,9 +22,9 @@
     "one-liner",
     "oneliner"
   ],
-  "repository" : {
-    "type" : "git",
-    "url" : "https://github.com/kizz/nolu.git"
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kizz/nolu.git"
   },
   "author": "kizz <kaname.kizz@gmail.com>",
   "license": "MIT",

@@ -68,10 +68,12 @@ $ cat test.txt | nolu -an --BEGIN 'total = 0, lines = 0' -e 'lines++; total += N
 Use `--BEGIN` and `--END` options (`-B` and `-E` for short, respectively) instead of `BEGIN{...}` and `END{...}` block in Ruby.
 Any variables are shared between all codes.
 
+NOTE that you may have to use single quote (') to write codes to avoid expanding `$_` as an environment variable by your shell.
+
 ### Handling JSON
 
-For simple JSON transformation, consider using [jq](https://stedolan.github.io/jq/).
-`nolu` provides more plain-JavaScript friendly way to write complex filter.
+For simple JSON transformation, [jq](https://stedolan.github.io/jq/) may be a good option.
+`nolu` provides another, more plain-JavaScript friendly way to write complex filter.
 
 A simple example:
 
